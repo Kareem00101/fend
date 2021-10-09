@@ -8,10 +8,18 @@
   <!-- Load Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Fira+Sans:900|Merriweather&display=swap" rel="stylesheet">  <!-- Load Styles -->
   <link href="css/styles.css" rel="stylesheet">
+  <!-- Connect with app.js-->
+  <script type="text/javascript" src="js/app.js"></script>
+  <!-- Another script for editing, after the DOM has been loaded-->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        //document.querySelector('footer').style.backgroundColor = 'purple';
+    });
+  </script>
 </head>
 <body>
   <!-- HTML Follows BEM naming conventions 
-  IDs are only used for sections to connect menu achors to sections -->
+  IDs are only used for sections to connect menu anchors to sections -->
   <header class="page__header">
     <nav class="navbar__menu">
       <!-- Navigation starts as empty UL that will be populated with JS -->

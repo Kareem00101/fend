@@ -17,7 +17,9 @@
  * Define Global Variables
  * 
 */
-
+document.addEventListener('click', function(){
+    console.log('hello');
+});
 
 /**
  * End Global Variables
