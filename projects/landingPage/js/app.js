@@ -30,7 +30,7 @@ let indexNavbar = document.querySelector('#navbar__list');
 */
 // Function for creating list item.
 function createListItem(listItem, id, name){
-    console.log("function createListItem was called");
+
     // Template literals were used, so that we can use the javascript variables.
     // The code below, links the item, to the section id and provides it with the section name.
     listItem.innerHTML = `<a class = "nav__link" href = '#${id}'>${name}</a>`;
@@ -39,7 +39,7 @@ function createListItem(listItem, id, name){
 
 // function to test visibility
 function isVisible(ele){
-    console.log("isVisible was called");
+
     let userBox = ele.getBoundingClientRect();
     return (userBox.bottom >= 0
             && userBox.right >= 0
@@ -58,11 +58,11 @@ function isVisible(ele){
 
 // The index navbar__list is empty we gotta fill it!
 function fillIndexNavbar(sections){
-    console.log("fillIndexNavbar called");
+    
     // A nice not for you ;)
     // for of loop is 24% faster than for each according to stackoverflow.
     for(let ele of sections){
-        console.log("fillIndexNavbar for loop was called");
+        
         // Creating a list item, for the navbar__list
         let listItem = document.createElement('li');
         // calling helping function createListItem, which takes three attributes
@@ -76,10 +76,10 @@ function fillIndexNavbar(sections){
 // Looking into the CSS, you can find an active section class
 // Using this class and simple logic we can achieve the required purpose
 function activateSection(sections){
-    console.log("activateSection was called");
+   
     // First we need to loop on our sections
     for (let ele of sections){
-        console.log("activateSection for loop was called");
+        
         // Now we gotta check which one is visible?
         if((isVisible(ele)) && (ele.classList.contains('your-active-class'))) continue;
         if(isVisible(ele)) ele.classList.add('your-active-class'); else ele.classList.remove('your-active-class');
