@@ -24,6 +24,9 @@ const indexSections = document.querySelectorAll('section');
 // Getting our navbar list, from index.html
 const indexNavbar = document.querySelector('#navbar__list');
 
+// Variable to see if an element is in viewport or not
+let isVisible = false;
+
 
 
 /**
@@ -40,14 +43,23 @@ function createListItem(listItem, id, name){
 function fillIndexNavbar(){
     // A nice not for you ;)
     // for of loop is 24% faster than for each according to stackoverflow.
-    for(e of indexSections){
+    for(ele of indexSections){
         // Creating a list item, for the navbar__list
         let listItem = document.createElement('li');
         // calling helping function createListItem, which takes three attributes
-        createListItem(listItem, e.getAttribute('id'), e.getAttribute('data-nav'));
+        createListItem(listItem, ele.getAttribute('id'), ele.getAttribute('data-nav'));
         // appending the listItem after they been fully created to the navbar
         indexNavbar.appendChild(listItem);
     }
+}
+
+// function to test visibility
+function isVisible(ele){
+    let userBox = ele.getBoundingClientRect();
+    return (userBox.bottom >= 0
+            && userBox.right >= 0
+            && userBox.top <= document.documentElement.clientHeight
+            && userBox.left <= document.documentElement.clientWidth);
 }
 
 
