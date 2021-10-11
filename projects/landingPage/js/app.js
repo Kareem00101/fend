@@ -34,7 +34,7 @@ const indexNavbar = document.querySelector('#navbar__list');
 function createListItem(listItem, id, name){
     // Template literals were used, so that we can use the javascript variables.
     // The code below, links the item, to the section id and provides it with the section name.
-    listItem.innerHTML = `<a class = "section__link" href = '#${id}'>${name}</a>`;
+    listItem.innerHTML = `<a class = "nav__link" href = '#${id}'>${name}</a>`;
 }
 // The index navbar__list is empty we gotta fill it!
 function fillIndexNavbar(){
