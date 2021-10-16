@@ -41,10 +41,11 @@ function createListItem(listItem, id, name){
 function isVisible(ele){
 
     let userBox = ele.getBoundingClientRect();
+    console.log(userBox);
     return (userBox.bottom >= 0
             && userBox.right >= 0
-            && userBox.top <= document.documentElement.clientHeight
-            && userBox.left <= document.documentElement.clientWidth);
+            && userBox.top <= (window.innerHeight || document.documentElement.clientHeight)
+            && userBox.left <= (window.innerHeight ||document.documentElement.clientWidth));
 }
 
 
@@ -75,22 +76,23 @@ function fillIndexNavbar(sections){
 // Add class 'active' to section when near top of viewport
 // Looking into the CSS, you can find an active section class
 // Using this class and simple logic we can achieve the required purpose
-function activateSection(sections){
+function activateSection(){
    
     // First we need to loop on our sections
-    for (let ele of sections){
-        
+    for (let ele of indexSections){
+        console.log(ele, isVisible(ele));
         // Now we gotta check which one is visible?
         if((isVisible(ele)) && (ele.classList.contains('your-active-class'))) continue;
         if(isVisible(ele)) ele.classList.add('your-active-class'); else ele.classList.remove('your-active-class');
         // Hmm, i suppose those if conditions can be handled better #note for future improvement.
     }
+    console.log("FDsfdsfsdfdsfdsfdsfsgrwgwrefwegdsfdsfewiohghwehDSIOVHDSIVHDSPI");
 }
 
 // We gotta put things into action right?
 // Main
 fillIndexNavbar(indexSections);
-document.addEventListener('scroll', activateSection(indexSections), 1);
+document.addEventListener('scroll', activateSection, 1);
 
 
 // Scroll to anchor ID using scrollTO event
