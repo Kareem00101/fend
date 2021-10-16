@@ -80,13 +80,11 @@ function activateSection(){
    
     // First we need to loop on our sections
     for (let ele of indexSections){
-        console.log(ele, isVisible(ele));
         // Now we gotta check which one is visible?
         if((isVisible(ele)) && (ele.classList.contains('your-active-class'))) continue;
         if(isVisible(ele)) ele.classList.add('your-active-class'); else ele.classList.remove('your-active-class');
         // Hmm, i suppose those if conditions can be handled better #note for future improvement.
     }
-    console.log("FDsfdsfsdfdsfdsfdsfsgrwgwrefwegdsfdsfewiohghwehDSIOVHDSIVHDSPI");
 }
 
 // We gotta put things into action right?
