@@ -41,7 +41,6 @@ function createListItem(listItem, id, name){
 function isVisible(ele){
 
     let userBox = ele.getBoundingClientRect();
-    console.log(userBox);
     return (userBox.bottom >= 0
             && userBox.right >= 0
             && userBox.top <= (window.innerHeight || document.documentElement.clientHeight)
