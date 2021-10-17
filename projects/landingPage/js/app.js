@@ -36,10 +36,10 @@ function createListItem(listItem, id, name){
     listItem.innerHTML = `<a class = "nav__link" href = '#${id}'>${name}</a>`;
     
 }
-
+// Function to add a smooth scrolling behaviour, when clicking on list items to the section.
 function sectionSmoothScroll(section, listItem){
     // add event listener on the listItem anchor
-    listItem.anchor.addEventListener('click', function(e){
+    listItem.addEventListener('click', e=>{
         // prevents event form being taken normally even if it doesn't get explicitly handled
         e.preventDefault();
         // add the smooth scroll behavior to the section
