@@ -34,8 +34,18 @@ function createListItem(listItem, id, name){
     // Template literals were used, so that we can use the javascript variables.
     // The code below, links the item, to the section id and provides it with the section name.
     listItem.innerHTML = `<a class = "nav__link" href = '#${id}'>${name}</a>`;
+    
 }
 
+function sectionSmoothScroll(section, listItem){
+    // add event listener on the listItem anchor
+    listItem.anchor.addEventListener('click', function(e){
+        // prevents event form being taken normally even if it doesn't get explicitly handled
+        e.preventDefault();
+        // add the smooth scroll behavior to the section
+        section.scrollIntoView({behavior:"smooth"});
+    });
+}
 
 // function to test visibility
 function isVisible(ele){
@@ -67,6 +77,8 @@ function fillIndexNavbar(sections){
         let listItem = document.createElement('li');
         // calling helping function createListItem, which takes three attributes
         createListItem(listItem, ele.getAttribute('id'), ele.getAttribute('data-nav'));
+        // add smooth scroll
+        sectionSmoothScroll(ele, listItem);
         // appending the listItem after they been fully created to the navbar
         indexNavbar.appendChild(listItem);
     }

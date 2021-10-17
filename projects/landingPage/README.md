@@ -25,6 +25,8 @@ w3schools.com/howto/howto_css_smooth_scroll.asp
 https://stackoverflow.com/questions/123999/how-can-i-tell-if-a-dom-element-is-visible-in-the-current-viewport
 https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
 https://www.w3schools.com/Jsref/met_document_queryselector.asp
+https://www.codegrepper.com/code-examples/javascript/smooth+scroll+on+click+anchor+tag
+https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
 https://github.com/akristic/landing-page
 https://github.com/Malak-Atef/Udacity-Landing-Page-2021
 https://github.com/mischegoss/Udacity-Landing-Page
